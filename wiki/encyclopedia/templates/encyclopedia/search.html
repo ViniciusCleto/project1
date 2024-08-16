@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Recommended Pages</h1>
+    <hr/>
+
+    <ul>
+        {% for entry in qSearchList %}
+            <li><a href="{% url 'entry' title=entry %}" class="btn btn-primary mb-1">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
